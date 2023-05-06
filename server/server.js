@@ -12,7 +12,7 @@ app.use("/api/users", usersRoute);
 app.use("/api/transactions", transactionsRoute);
 app.use("/api/requests", requestsRoute);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ||2000;
 const path = require("path");
 __dirname = path.resolve();
 // heroku deployment
