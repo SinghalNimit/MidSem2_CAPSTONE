@@ -1,19 +1,31 @@
 import React from "react"
 import { Col, Form, Row } from 'antd'
-import{useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { RegisterUser } from "../../apicalls/users";
+import { response } from "express";
 function Register() {
     const navigate = useNavigate();
 
-    const onFinish = (values) => {
-        console.log("Received values of form: ", values);
+    const onFinish = async (values) => {
+        try {
+            const response = await RegisterUser(values);
+            if (response.success) {
+                MessageChannel.success(response.message);
+                navigate("/login");
+            } else {
+                message.error(response.message);
+            }
+        } catch (error) {
+            message.error(response.message);
+        }
     }
     return (
         <div className='m-5'>
             <div className="flex items-center justify-between">
-              <h1 className="text-2xl">WALLET BANK - REGISTER  </h1>
-              <h1 className="text-sm underline"
-               onClick={()=>navigate("/login")}
-              > Already a member , Log in</h1>
+                <h1 className="text-2xl">WALLET BANK - REGISTER  </h1>
+                <h1 className="text-sm underline"
+                    onClick={() => navigate("/login")}
+                > Already a member , Log in</h1>
 
 
 
