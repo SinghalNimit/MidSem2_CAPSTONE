@@ -67,6 +67,9 @@ function Register() {
                             <select>
                                 <option value="NATIONAL_ID">National ID</option>
                                 <option value="PASSPORT">Passport</option>
+                                <option value="PASSPORT">Passport</option>                                
+                                <option value="PASSPORT">Passport</option>
+
                                 <option value="DRIVING LICENSE">Driving License</option>
                                 <option value="SOCIAL CARD">Social Security Card</option>
                             </select>
